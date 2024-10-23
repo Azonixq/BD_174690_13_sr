@@ -1,0 +1,60 @@
+zad 1
+
+
+CREATE TABLE postac(
+	id_postaci int AUTO_INCREMENT,
+	nazwa varchar(40),	
+	rodzaj ENUM ('wiking','ptak','kobieta'),
+	data_ur DATE,
+	wiek int UNSIGNED,
+	PRIMARY KEY(id_postaci)
+);
+
+INSERT INTO postac (nazwa,rodzaj,data_ur,wiek) 
+VALUES ('Bjorn','wiking','1997-01-01',10);
+
+INSERT INTO postac (nazwa,rodzaj,data_ur,wiek) 
+VALUES ('Drozd','ptak','2020-02-02',2);
+
+INSERT INTO postac (nazwa,rodzaj,data_ur,wiek) 
+VALUES ('Tesciowa','kobieta','1020-03-03',1000);
+
+UPDATE postac
+SET wiek = 88
+WHERE nazwa = 'Tesciowa';
+
+zad 2
+
+CREATE TABLE walizka(
+	id_walizki int AUTO_INCREMENT,
+	pojemnosc int UNSIGNED,
+	kolor ENUM ('różowy','czerwony','tęczowy','żółty'),
+	id_wlaciciela int,
+	PRIMARY KEY(id_walizki),
+	FOREIGN KEY(id_wlaciciela)
+	REFERENCES postac(id_postaci) ON DELETE CASCADE
+);
+
+ALTER TABLE walizka
+ALTER kolor SET DEFAULT 'różowy';
+
+INSERT INTO walizka (id_wlaciciela) VALUES (1);
+INSERT INTO walizka (id_wlaciciela) VALUES (3);
+
+zad 3 
+
+CREATE TABLE izba_z_polami(
+	adres_budynku varchar(40),
+	nazwa_izby varchar(40),
+	metraz int UNSIGNED,
+	wlasciciel int,
+	PRIMARY KEY(adres_budynku, nazwa_izby),
+	FOREIGN KEY(wlasciciel)
+	REFERENCES postac(id_postaci) ON DELETE SET NULL
+);
+
+############################ nizej jeszcze nei ma
+ALTER TABEL izba_z_polami
+ADD COLUMN kolor_izby varchar(20) SET DEFAULT 'czarny'
+AFTER metraz;
+
