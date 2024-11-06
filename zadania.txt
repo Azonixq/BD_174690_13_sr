@@ -1,4 +1,4 @@
-zad 1
+#zad 1
 
 
 CREATE TABLE postac(
@@ -23,7 +23,7 @@ UPDATE postac
 SET wiek = 88
 WHERE nazwa = 'Tesciowa';
 
-zad 2
+#zad 2
 
 CREATE TABLE walizka(
 	id_walizki int AUTO_INCREMENT,
@@ -41,7 +41,7 @@ ALTER kolor SET DEFAULT 'różowy';
 INSERT INTO walizka (id_wlaciciela) VALUES (1);
 INSERT INTO walizka (id_wlaciciela) VALUES (3);
 
-zad 3 
+#zad 3 
 
 CREATE TABLE izba_z_polami(
 	adres_budynku varchar(40),
@@ -59,7 +59,7 @@ AFTER metraz;
 
 INSERT INTO izba_z_polami(adres_budynku,nazwa_izby,metraz,wlasciciel) VALUES('jaracza 24/7','eeeee','420','1');
 
-zad 4
+#zad 4
 
 CREATE TABLE przetwory(
 	id_przetworu int,
@@ -75,7 +75,7 @@ CREATE TABLE przetwory(
 
 INSERT INTO przetwory(id_przetworu,rok_produkcji,id_wykonawcy,zawartosc,id_konsumenta) VALUES(1,1222,2,'bigos',3);
 
-zad 5
+#zad 5
 INSERT INTO postac (nazwa,rodzaj,data_ur,wiek) VALUES ('Bot','wiking','1222-02-02',200);
 INSERT INTO postac (nazwa,rodzaj,data_ur,wiek) VALUES ('rot','wiking','1322-02-02',300);
 INSERT INTO postac (nazwa,rodzaj,data_ur,wiek) VALUES ('Tor','wiking','1422-02-02',400);
@@ -114,3 +114,7 @@ WHERE rodzaj = 'ptak';
 
 DELETE FROM izba_z_polami WHERE adres_budynku = 'jaracza 24/7';
 DROP TABLE izba_z_polami;
+
+#zad 2/1
+
+DELETE FROM postac WHERE MAX(wiek) and nazwa != 'Bjorn';
