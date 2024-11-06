@@ -53,8 +53,8 @@ CREATE TABLE izba_z_polami(
 	REFERENCES postac(id_postaci) ON DELETE SET NULL
 );
 
-############################ nizej jeszcze nei ma
-ALTER TABEL izba_z_polami
-ADD COLUMN kolor_izby varchar(20) SET DEFAULT 'czarny'
+ALTER TABLE izba_z_polami
+ADD COLUMN kolor_izby varchar(20) DEFAULT 'czarny'
 AFTER metraz;
 
+INSERT INTO izba_z_polami(adres_budynku,nazwa_izby,metraz,wlasciciel) VALUES('jaracza 24/7','eeeee','420','1');
