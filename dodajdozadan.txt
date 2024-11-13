@@ -1,0 +1,24 @@
+b)
+  #sprwadz te typy
+  ALTER TABLE postac MODIFY rodzaj enum(syrena,wiking,kobieta,ptak);
+c)INSERT INTO postac (nazwa,rodzaj,data_ur,wiek,pesel) VALUES ('Getruda Nieszczera','syrena','2020-02-02',2,04252607579); #statek jeszcze
+
+3
+  a)
+  UPDATE postac
+  SET  przynalezny_statek  =  'Titanic' 
+  WHERE  nazwa LIKE 'a%';
+
+ b)
+   UPDATE statek
+   SET max_ladownosc = max_ladownosc *0.3
+   WHERE  data_wodowania <= 1900 and data_wodowania  >= 2000;
+
+c)
+  pomijam
+  4
+  a)
+  #znowu edit enum i dodaj waz
+  INSERT INTO postac (nazwa,rodzaj,data_ur,wiek,pesel) VALUES ('Loko','waz','2020-02-02',2,04252607579);
+
+  5.
