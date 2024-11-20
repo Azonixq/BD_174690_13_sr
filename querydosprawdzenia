@@ -1,0 +1,1 @@
+DELETE FROM table ORDER BY jobPositonId DESC LIMIT 1
