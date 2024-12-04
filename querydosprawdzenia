@@ -22,3 +22,26 @@ SELECT * FROM zasob WHERE rodzaj IS NOT NULL ORDER BY waga DESC;
 SELECT * FROM kreatura WHERE dataUr IS NOT NULL ORDER BY dataUr ASC LIMIT 5;
 SELECT DISTINCT rodzaj FROM zasob WHERE rodzaj IS NOT NULL;
 SELECT CONCAT(nazwa,' - ',rodzaj) AS kolumna FROM kreatura WHERE rodzaj LIKE 'wi%';
+
+zad 4
+SELECT DISTINCT nazwa from zasob;
+SELECT nazwa,rodzaj as nazwarodzaj FROM kreatura WHERE rodzaj LIKE 'wi%';
+SELECT nazwa, ilosc*waga from zasob as costamcostam WHERE YEAR(dataPozyskania) BETWEEN 2000 AND 2007;
+
+zad 5
+SELECT nazwa, waga, waga*0.7 AS wlasciwa, waga*0.3 AS odpad from zasob WHERE rodzaj = 'jedzenie';
+SELECT * FROM zasob WHERE rodzaj IS NULL;
+SELECT nazwa,rodzaj FROM zasob WHERE nazwa LIKE 'Ba%' or '%os' ORDER BY nazwa DESC;
+
+karta 4
+zad1
+SELECT AVG(waga) from kreatura WHERE rodzaj = 'wiking';
+SELECT rodzaj, COUNT(rodzaj) as ilosc, AVG(waga) as waga from kreatura GROUP BY rodzaj ;
+SELECT rodzaj, AVG(YEAR(dataUr)) as wiek from kreatura GROUP BY rodzaj;
+
+zad2
+SELECT rodzaj, SUM(ilosc*waga) as suma FROM zasob GROUP BY rodzaj;
+SELECT nazwa, AVG(waga) FROM zasob WHERE ilosc >= 4 and waga*ilosc > 10 GROUP BY nazwa;
+
+
+
